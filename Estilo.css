@@ -1,0 +1,59 @@
+/* Estilos para a Barra Lateral no PC */
+.barra-lateral {
+    float: right;
+    width: 150px;
+    background-color: #F05454;
+    border-left: 2px solid rgb(255, 255, 255);
+    padding: 11px;
+    border: 4px solid rgb(0, 0, 0);
+    
+    /* CORREÇÃO DA ALTURA: */
+    min-height: 100vh; /* Ocupa pelo menos a altura toda da tela */
+    position: relative; /* Mantém ela no lugar */
+    box-sizing: border-box; /* Impede que a borda "estique" a largura */
+}
+
+/* Ajuste para o Footer não subir */
+#footer {
+    width: 100%;
+    clear: both; /* OBRIGATÓRIO quando se usa float */
+    padding: 20px;
+    background-color: #30475E;
+    text-align: center;
+    border-top: 2px solid black;
+}
+
+.barra-superior {
+    background-color: #30475E;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 2px solid rgb(255, 255, 255);
+}
+
+/* --- RESPONSIVIDADE (Celular) --- */
+@media (max-width: 600px) {
+  body {
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    min-height: 100vh;
+  }
+
+  .barra-lateral {
+    float: none;      /* Para de flutuar à direita */
+    width: 100%;      /* Ocupa a largura toda da tela */
+    min-height: auto; /* Para de tentar ocupar a altura toda da tela */
+    border-left: none; 
+    border-bottom: 4px solid black;
+    display: block;   /* Garante que se comporte como um bloco */
+  }
+
+  /* Garante que as imagens não quebrem o layout no celular */
+  #perfil img {
+    float: none !important;
+    display: block;
+    margin: 0 auto 20px auto;
+  }
+}

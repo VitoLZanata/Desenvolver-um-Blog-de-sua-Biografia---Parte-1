@@ -1,131 +1,295 @@
-/* 1. RESET E GLOBAIS */
+/* 1. RESET E GLOBAIS - Limpa os estilos padrão que o navegador coloca */
 * {
   margin: 0;
+  /* Remove margens externas padrão */
   padding: 0;
+  /* Remove preenchimentos internos padrão */
   box-sizing: border-box;
+  /* Garante que padding e bordas não aumentem o tamanho total do elemento */
 }
 
 body {
   font-family: sans-serif;
+  /* Define uma fonte sem serifa para o site todo */
   background-color: #f4f4f4;
+  /* Define a cor de fundo cinza clara da página */
 }
 
-/* 2. CABEÇALHO */
+/* 2. CABEÇALHO - Estilização da barra de título no topo */
 .barra-superior {
   background-color: #30475E;
+  /* Cor de fundo azul escura */
   color: white;
+  /* Cor do texto em branco */
   padding: 20px;
+  /* Espaçamento interno em todos os lados */
   text-align: center;
+  /* Centraliza o texto */
   border-bottom: 4px solid #F05454;
+  /* Cria uma linha grossa vermelha na parte de baixo */
 }
 
-/* 3. TÍTULO E PERFIL */
+/* 3. TÍTULO E PERFIL - Estiliza o nome principal e a área da foto */
 .tituloh2 {
   text-align: center;
+  /* Centraliza o nome principal */
   margin: 20px 0;
+  /* 20px de espaço acima e abaixo, 0 nas laterais */
 }
 
 .perfil {
-    display: flex;          
-    align-items: center;    
-    justify-content: center;
-    gap: 20px;              
-    padding: 20px;
-    background-color: white;
-    border-radius: 15px;
+  display: flex;
+  /* Habilita o Flexbox para colocar itens lado a lado */
+  align-items: center;
+  /* Alinha verticalmente os itens no centro */
+  justify-content: center;
+  /* Centraliza o conjunto horizontalmente */
+  gap: 20px;
+  /* Cria um buraco (espaço) de 20px entre os elementos */
+  padding: 20px;
+  /* Espaço interno */
+  background-color: white;
+  /* Fundo branco para a área do perfil */
+  border-radius: 15px;
+  /* Arredonda os cantos da caixa */
 }
 
 .imagem-perfil {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;     
-    border: 6px solid #000;
-    object-fit: cover;      
+  width: 200px;
+  /* Largura fixa da imagem */
+  height: 200px;
+  /* Altura fixa igual à largura */
+  border-radius: 50%;
+  /* Deixa a imagem perfeitamente redonda */
+  border: 6px solid #000;
+  /* Borda preta de 6px */
+  object-fit: cover;
+  /* Garante que a foto preencha o círculo sem esticar */
 }
 
-.esquerda, .direita {
-    font-weight: bold;
-    color: #333;
-    min-width: 150px;       
+.esquerda,
+.direita {
+  font-weight: bold;
+  /* Deixa o texto do perfil em negrito */
+  color: #333;
+  /* Cor do texto cinza escuro */
+  min-width: 150px;
+  /* Garante um espaço mínimo para o texto não quebrar */
 }
 
-.esquerda { text-align: right; }
-.direita { text-align: left; }
+.esquerda {
+  text-align: right;
+}
 
-/* 4. INTRODUÇÃO */
+/* Alinha o texto da esquerda para a direita (encostando na foto) */
+.direita {
+  text-align: left;
+}
+
+/* Alinha o texto da direita para a esquerda (encostando na foto) */
+
+/* 4. INTRODUÇÃO - Estilo do texto "Sobre mim" */
 .introducao {
   text-align: center;
+  /* Centraliza o parágrafo de introdução */
   padding: 20px;
+  /* Espaço interno */
 }
 
-/* 5. SEÇÃO DE LISTAS */
+/* 5. SEÇÃO DE LISTAS - Organização das caixas de Hobbies e Cultura */
 .listas {
-    display: flex;
-    justify-content: center;  
-    align-items: flex-start;  
-    gap: 25px;                
-    margin: 20px auto;
-    max-width: 1000px;        
-    padding: 20px;
+  display: flex;
+  /* Coloca as duas caixas (Pessoal e Cultura) lado a lado */
+  justify-content: center;
+  /* Centraliza as caixas na tela */
+  align-items: stretch;
+  /* Alinha as caixas pelo topo */
+  gap: 25px;
+  /* Espaço entre a caixa pessoal e a de cultura */
+  margin: 20px auto;
+  /* Margem de 20px e centralização automática nas laterais */
+  max-width: 1000px;
+  /* Limita a largura máxima das listas */
+  padding: 20px;
+  /* Espaço interno */
 }
 
-.caixa-lista-pessoal, 
+.caixa-lista-pessoal,
 .caixa-lista-cultura {
-    flex: 1;                  
-    background-color: #bdbdbd;
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    min-height: 450px;        
+  flex: 1;
+  /* Faz com que ambas ocupem o mesmo espaço proporcional */
+  background-color: #bdbdbd;
+  /* Cor de fundo cinza para as caixas */
+  padding: 25px;
+  /* Espaço interno grande */
+  border-radius: 12px;
+  /* Arredonda os cantos */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  /* Cria uma sombra suave ao redor */
+  min-height: 450px;
+  /* Define uma altura mínima para manter as caixas iguais */
 }
 
-.caixa-lista-cultura h3 {
-    color: #30475E;
-    margin-bottom: 15px;
-    text-transform: uppercase;
+.caixa-lista-cultura h3,
+.caixa-lista-pessoal h3 {
+  color: #30475E;
+  /* Cor azul escura nos títulos */
+  margin-bottom: 15px;
+  /* Espaço abaixo do título */
+  text-transform: uppercase;
+  /* Deixa o título todo em letras MAIÚSCULAS */
 }
 
-/* Estilo para as listas internas */
-ul, ol {
-    text-align: left;
-    margin-bottom: 15px;
-    list-style-position: outside;
+/* Estilo para as listas internas (ul e ol) */
+ul,
+ol {
+  text-align: left;
+  /* Alinha os itens à esquerda */
+  margin-bottom: 15px;
+  /* Espaço abaixo de cada lista */
+  list-style-position: outside;
+  /* Coloca os números/bolinhas para fora do alinhamento do texto */
 }
 
-ol { margin-left: 40px; }
+ol {
+  margin-left: 40px;
+}
+
+/* Dá um recuo para os números não ficarem grudados */
 
 li {
-    padding: 5px 0;
-    font-weight: 500;
+  padding: 5px 0;
+  /* Espaço entre um item e outro */
+  font-weight: 500;
+  /* Peso da fonte médio */
 }
 
-/* Subtítulos em destaque (Hobbies, Filmes, etc) */
-.caixa-lista-pessoal > ul > li, 
-.caixa-lista-cultura > ul > li {
-    list-style-type: none; 
+/* Estilo específico para os subtítulos (ex: Hobbies, Filmes) */
+.caixa-lista-pessoal>ul>li,
+.caixa-lista-cultura>ul>li {
+  list-style-type: none;
+  /* Remove a bolinha do primeiro nível da lista */
+  font-weight: bold;
+  /* Deixa o subtítulo em negrito */
+  color: #F05454;
+  /* Cor vermelha de destaque */
+  font-size: 1.1rem;
+  /* Aumenta um pouco o tamanho da fonte */
+  margin-top: 10px;
+  /* Espaço acima para separar dos itens anteriores */
+}
+
+.repertorio {
+  background-color: #bdbdbd;
+  display: flex;
+  /* Coloca as duas caixas (Pessoal e Cultura) lado a lado */
+  justify-content: center;
+  /* Centraliza as caixas na tela */
+  align-items: center;
+  /* Alinha as caixas pelo topo */
+  gap: 25px;
+  /* Espaço entre a caixa pessoal e a de cultura */
+  margin: 20px auto;
+  /* Margem de 20px e centralização automática nas laterais */
+  max-width: 1000px;
+  /* Limita a largura máxima das listas */
+  min-height: 100px;
+  padding: 20px;
+  /* Espaço interno */
+  border-radius: 12px;
+
+}
+
+.repertorio h1{
+  flex: 1;
+  align-items: left;
+  margin: 0;
+}
+/* Container principal das linguagens */
+.linguagens {
+    text-align: center;
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+
+/* Estilo do título "Linguagens que tenho noção" */
+.linguagens ul > li:first-child {
     font-weight: bold;
-    color: #F05454;
-    font-size: 1.1rem;
-    margin-top: 10px;
+    color: #30475E;
+    margin-bottom: 15px;
+}
+
+/* Transforma a lista ordenada (ol) em um layout flexível lado a lado */
+.linguagens ol {
+    flex-wrap: wrap;       /* Se não couber na linha, pula para a de baixo */
+    justify-content: center;
+    gap: 15px;
+    list-style: none;      /* Remove os números (1, 2, 3...) */
+    margin-left: 0;        /* Reseta a margem que demos anteriormente */
+}
+
+/* Estilo de cada "Badge" (etiqueta) de linguagem */
+.linguagens ol li {
+    background-color: #30475E;
+    color: white;
+    padding: 8px 18px;
+    border-radius: 20px;   /* Deixa as pontas bem arredondadas */
+    border: 2px solid #F05454;
 }
 
 /* 6. RODAPÉ */
 .footer {
   background-color: #30475E;
+  /* Fundo azul escuro */
   color: white;
+  /* Texto branco */
   padding: 20px;
+  /* Espaço interno */
   text-align: center;
+  /* Centraliza a piada */
   margin-top: 30px;
+  /* Afasta o rodapé do resto do conteúdo */
+  border-top: 4px solid #F05454
 }
 
-/* 7. RESPONSIVIDADE */
+/* Efeito Visual na Foto */
+.imagem-perfil:hover {
+  transform: scale(1.11);
+  /* Aumenta a foto em 11% quando o mouse passa por cima */
+  transition: transform 0.7s ease;
+  /* Define que o aumento levará 0.7 segundos e será suave */
+  border-color: hsl(0, 36%, 30%);
+  /* Muda a cor da borda para um tom de vinho ao passar o mouse */
+}
+
+/* 7. RESPONSIVIDADE - Ajustes para telas menores (Celulares) */
 @media (max-width: 768px) {
-  .perfil, .listas {
+
+  .perfil,
+  .listas {
     flex-direction: column;
+    /* Muda de linha para coluna (empilha os itens) */
     align-items: center;
+    /* Centraliza tudo no celular */
   }
-  .esquerda, .direita { 
-      text-align: center; 
-      min-width: auto;
+
+  .caixa-lista-pessoal,
+  .caixa-lista-cultura {
+    width: 100%;
+    /* As caixas passam a ocupar a largura toda da tela */
+  }
+
+  .esquerda,
+  .direita {
+    text-align: center;
+    /* No celular, o texto do perfil fica todo centralizado */
+    min-width: auto;
+    /* Remove a largura mínima para caber em telas pequenas */
+  }
+
+  .repertorio{
+    width: 100%;
+    margin: 50px;
   }
 }

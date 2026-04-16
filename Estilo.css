@@ -1,59 +1,131 @@
-/* Estilos para a Barra Lateral no PC */
-.barra-lateral {
-    float: right;
-    width: 150px;
-    background-color: #F05454;
-    border-left: 2px solid rgb(255, 255, 255);
-    padding: 11px;
-    border: 4px solid rgb(0, 0, 0);
-    
-    /* CORREÇÃO DA ALTURA: */
-    min-height: 100vh; /* Ocupa pelo menos a altura toda da tela */
-    position: relative; /* Mantém ela no lugar */
-    box-sizing: border-box; /* Impede que a borda "estique" a largura */
+/* 1. RESET E GLOBAIS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Ajuste para o Footer não subir */
-#footer {
-    width: 100%;
-    clear: both; /* OBRIGATÓRIO quando se usa float */
-    padding: 20px;
-    background-color: #30475E;
-    text-align: center;
-    border-top: 2px solid black;
+body {
+  font-family: sans-serif;
+  background-color: #f4f4f4;
 }
 
+/* 2. CABEÇALHO */
 .barra-superior {
-    background-color: #30475E;
-    color: white;
-    padding: 20px;
-    text-align: center;
-    border-bottom: 2px solid rgb(255, 255, 255);
+  background-color: #30475E;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  border-bottom: 4px solid #F05454;
 }
 
-/* --- RESPONSIVIDADE (Celular) --- */
-@media (max-width: 600px) {
-  body {
-    font-size: 14px;
-    margin: 0;
-    padding: 0;
-    position: relative;
-    min-height: 100vh;
-  }
+/* 3. TÍTULO E PERFIL */
+.tituloh2 {
+  text-align: center;
+  margin: 20px 0;
+}
 
-  .barra-lateral {
-    float: none;      /* Para de flutuar à direita */
-    width: 100%;      /* Ocupa a largura toda da tela */
-    min-height: auto; /* Para de tentar ocupar a altura toda da tela */
-    border-left: none; 
-    border-bottom: 4px solid black;
-    display: block;   /* Garante que se comporte como um bloco */
-  }
+.perfil {
+    display: flex;          
+    align-items: center;    
+    justify-content: center;
+    gap: 20px;              
+    padding: 20px;
+    background-color: white;
+    border-radius: 15px;
+}
 
-  /* Garante que as imagens não quebrem o layout no celular */
-  #perfil img {
-    float: none !important;
-    display: block;
-    margin: 0 auto 20px auto;
+.imagem-perfil {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;     
+    border: 6px solid #000;
+    object-fit: cover;      
+}
+
+.esquerda, .direita {
+    font-weight: bold;
+    color: #333;
+    min-width: 150px;       
+}
+
+.esquerda { text-align: right; }
+.direita { text-align: left; }
+
+/* 4. INTRODUÇÃO */
+.introducao {
+  text-align: center;
+  padding: 20px;
+}
+
+/* 5. SEÇÃO DE LISTAS */
+.listas {
+    display: flex;
+    justify-content: center;  
+    align-items: flex-start;  
+    gap: 25px;                
+    margin: 20px auto;
+    max-width: 1000px;        
+    padding: 20px;
+}
+
+.caixa-lista-pessoal, 
+.caixa-lista-cultura {
+    flex: 1;                  
+    background-color: #bdbdbd;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    min-height: 450px;        
+}
+
+.caixa-lista-cultura h3 {
+    color: #30475E;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+/* Estilo para as listas internas */
+ul, ol {
+    text-align: left;
+    margin-bottom: 15px;
+    list-style-position: outside;
+}
+
+ol { margin-left: 40px; }
+
+li {
+    padding: 5px 0;
+    font-weight: 500;
+}
+
+/* Subtítulos em destaque (Hobbies, Filmes, etc) */
+.caixa-lista-pessoal > ul > li, 
+.caixa-lista-cultura > ul > li {
+    list-style-type: none; 
+    font-weight: bold;
+    color: #F05454;
+    font-size: 1.1rem;
+    margin-top: 10px;
+}
+
+/* 6. RODAPÉ */
+.footer {
+  background-color: #30475E;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  margin-top: 30px;
+}
+
+/* 7. RESPONSIVIDADE */
+@media (max-width: 768px) {
+  .perfil, .listas {
+    flex-direction: column;
+    align-items: center;
+  }
+  .esquerda, .direita { 
+      text-align: center; 
+      min-width: auto;
   }
 }
